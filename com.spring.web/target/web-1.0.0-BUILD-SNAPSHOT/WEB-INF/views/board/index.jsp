@@ -4,11 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>board</title>
+<title>게시판</title>
+    <script>
+	$(document).on('click', '#btnWriteForm', function(e){
+		e.preventDefault();
+		
+		location.href = "${pageContext.request.contextPath}/board/boardForm";
+	});
+</script>
 </head>
 <body>
-<h2>board list</h2>
-	<table>
+    <article>
+        <div class="container">
+            <div class="table-responsive">
+<h2>게시판</h2>
+	<table class="table table-striped table-sm">
 		<colgroup>
 			<col style="width:5%;" />
 			<col style="width:auto;" />
@@ -44,5 +54,11 @@
 			</c:choose>
 		</tbody>
 	</table>
+            </div>
+            <div>
+                <button type="button" class="btn btn-sm btn-primary" id="btnWriteForm">글쓰기</button>
+            </div>
+        </div>
+    </article>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.spring.web.MysqlConnectionTest" time="0.177" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.spring.web.MysqlConnectionTest" time="0.183" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.312-b07"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Temurin"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/com.spring.web"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/parkjungyeong/git/springMVC_CRUD/com.spring.web"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/com.spring.web"/>
+    <property name="user.dir" value="/Users/parkjungyeong/git/springMVC_CRUD/com.spring.web"/>
     <property name="java.runtime.version" value="1.8.0_312-b07"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf410526303070233999.tmp"/>
+    <property name="classworlds.conf" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf16813198872980420594.tmp"/>
     <property name="jansi.force" value="true"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/parkjungyeong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
@@ -55,7 +55,7 @@
     <property name="java.ext.dirs" value="/Users/parkjungyeong/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Temurin"/>
-    <property name="maven.home" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/com.spring.web/EMBEDDED"/>
+    <property name="maven.home" value="/Users/parkjungyeong/git/springMVC_CRUD/com.spring.web/EMBEDDED"/>
     <property name="style.color" value="always"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
@@ -65,5 +65,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.spring.web.MysqlConnectionTest" name="testConnection" time="0.177"/>
+  <testcase classname="com.spring.web.MysqlConnectionTest" name="testConnection" time="0.183"/>
 </testsuite>
