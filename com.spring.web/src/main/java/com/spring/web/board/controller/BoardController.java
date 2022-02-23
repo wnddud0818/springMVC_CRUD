@@ -26,9 +26,9 @@ public class BoardController {
 	}
 	//글쓰기
 	@RequestMapping("/boardForm")
-	public String boardForm() {
+	public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) {
 		return "board/boardForm";
-	}
+		}
 	@RequestMapping(value = "/saveBoard", method = RequestMethod.POST)
 	public String saveBoard(@ModelAttribute("BoardVO") BoardVO boardVO
 			, @RequestParam("mode") String mode
@@ -47,10 +47,15 @@ public class BoardController {
 	}
 	@RequestMapping(value = "/editForm", method = RequestMethod.GET)
 	public String editForm(@RequestParam("bid") int bid
-, @RequestParam("mode") String mode, Model model) throws Exception {
+	, @RequestParam("mode") String mode, Model model) throws Exception {
 		model.addAttribute("boardContent", boardService.getBoardContent(bid));
 		model.addAttribute("mode", mode);
 		model.addAttribute("boardVO", new BoardVO());
 		return "board/boardForm";
+	}
+	@RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
+	public String deleteBoard(RedirectAttributes rttr, @RequestParam("bid") int bid) throws Exception {
+		boardService.deleteBoard(bid);
+		return "redirect:/board/getBoardList";
 	}
 }	

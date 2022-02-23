@@ -12,7 +12,8 @@ public interface BoardService {
 	public <String, Object> void insertBoard(BoardVO boardVO) throws Exception;
 	//상세조회
 	public BoardVO getBoardContent(int bid) throws Exception;
-	
+	//수정 
 	public <String, Object> void updateBoard(BoardVO boardVO) throws Exception;
-
+	//삭제 
+	public void deleteBoard(int bid) throws Exception;
 }
