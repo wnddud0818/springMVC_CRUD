@@ -10,6 +10,19 @@
 			count(*) as listCnt
 		FROM
 			TBL_BOARD
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="keyword != null and keyword != '' ">
+				<if test="searchType=='title'">
+					AND TITLE like CONCAT('%', #{keyword}, '%')
+				</if>
+				<if test="searchType=='content'">
+					AND CONTENT like CONCAT('%', #{keyword}, '%')
+				</if>
+				<if test="searchType=='reg_id'">
+				AND reg_id like CONCAT('%', #{keyword}, '%')
+					</if>
+      		</if>
+			</trim>
 	</select>
 
 	<select id="getBoardList" resultType="com.spring.web.board.model.BoardVO">
@@ -17,6 +30,18 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchType=='title' and keyword != null and keyword != '' ">
+				AND TITLE like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='content' and keyword != null and keyword != '' ">
+				AND CONTENT like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='reg_id' and keyword != null and keyword != '' ">
+				AND reg_id like CONCAT('%', #{keyword}, '%')
+			</if>	
+			</trim>
+		ORDER BY BID DESC
 		LIMIT #{startList}, #{listSize}
 	</select>
 	

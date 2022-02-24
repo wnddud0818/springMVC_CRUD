@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.spring.web.board.model.BoardVO;
 import com.spring.web.board.service.BoardService;
 import com.spring.web.common.Pagination;
+import com.spring.web.common.Search;
 
 @Controller
 @RequestMapping(value = "/board")
@@ -24,16 +25,22 @@ public class BoardController {
 	public String getBoardList(Model model
 			, @RequestParam(required = false, defaultValue = "1") int page
 			, @RequestParam(required = false, defaultValue = "1") int range
+			, @RequestParam(required = false, defaultValue = "title") String searchType
+			, @RequestParam(required = false) String keyword
 			) throws Exception {
-		//전체 게시글 개수
-				int listCnt = boardService.getBoardListCnt();
-						
+			//검색 
+			Search search = new Search();
+			search.setSearchType(searchType);
+			search.setKeyword(keyword);
+			//전체 게시글 개수
+			int listCnt = boardService.getBoardListCnt(search);
+			search.pageInfo(page, range, listCnt);
 		    //Pagination 객체생성
-				Pagination pagination = new Pagination();
-		   pagination.pageInfo(page, range, listCnt);
+			Pagination pagination = new Pagination();
+			pagination.pageInfo(page, range, listCnt);
 						
-		model.addAttribute("pagination", pagination);
-		model.addAttribute("boardList", boardService.getBoardList(pagination));
+		model.addAttribute("pagination", search);
+		model.addAttribute("boardList", boardService.getBoardList(search));
 		return "board/index";
 	}
 	//글쓰기
