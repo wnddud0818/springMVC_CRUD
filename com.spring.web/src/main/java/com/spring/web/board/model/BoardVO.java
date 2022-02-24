@@ -10,6 +10,8 @@ public class BoardVO {
 	public String reg_id;
 	public String reg_dt;
 	public String edit_dt;
+
+	
 	public int getBid() {
 		return bid;
 	}

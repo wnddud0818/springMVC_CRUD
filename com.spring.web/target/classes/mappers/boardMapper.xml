@@ -5,11 +5,19 @@
     
 <mapper namespace="com.spring.web.board.boardMapper">
 
+	<select id="getBoardListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			TBL_BOARD
+	</select>
+
 	<select id="getBoardList" resultType="com.spring.web.board.model.BoardVO">
 		SELECT
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
+		LIMIT #{startList}, #{listSize}
 	</select>
 	
 	<select id="getBoardContent" resultType="com.spring.web.board.model.BoardVO" parameterType="com.spring.web.board.model.BoardVO">

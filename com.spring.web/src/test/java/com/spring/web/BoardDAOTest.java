@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.web.board.dao.BoardDAO;
 import com.spring.web.board.model.BoardVO;
+import com.spring.web.common.Pagination;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -27,8 +28,8 @@ public class BoardDAOTest {
 	private BoardDAO boardDAO;
 	
 	@Test @Ignore
-	public void testGetBoardList() throws Exception {
-		List<BoardVO> boardList = boardDAO.getBoardList();
+	public void testGetBoardList(Pagination pagination) throws Exception {
+		List<BoardVO> boardList = boardDAO.getBoardList(pagination);
 		logger.info("\n Board List \n ");
 		if(boardList.size() > 0) {
 			for(BoardVO list : boardList) {
@@ -61,17 +62,22 @@ public class BoardDAOTest {
 	public void testInsertBoard() throws Exception {
 		BoardVO boardVO = new BoardVO();
 		boardVO.setCate_cd("1");
-		boardVO.setTitle("첫번째 게시물 입니다.");
-		boardVO.setContent("첫번째 게시물입니다.");
+		//boardVO.setTitle("첫번째 게시물 입니다.");
+		//boardVO.setContent("첫번째 게시물입니다.");
 		boardVO.setTag("1");
 		boardVO.setReg_id("1");
 		
+		for( int i = 1; i < 123 ; i++) {
+		    boardVO.setTitle(i + " 번째 게시물 입니다.");
+		    boardVO.setContent(i + " 번째 게시물 입니다.");
+
 		int result = boardDAO.insertBoard(boardVO);
 		logger.info("\n Insert Board Result " +result);
 		if(result == 1) {
 			logger.info("\n 게시물 등록 성공 ");
 		} else {
 			logger.info("\n 게시물 등록 실패");
+		}
 		}
 	}
 	

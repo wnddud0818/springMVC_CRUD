@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.web.board.dao.BoardDAO;
 import com.spring.web.board.model.BoardVO;
+import com.spring.web.common.Pagination;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -15,8 +16,8 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO boardDAO;
 	
-	public List<BoardVO> getBoardList() throws Exception {
-		return boardDAO.getBoardList();
+	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
+		return boardDAO.getBoardList(pagination);
 	}
 	@Override
 	public void insertBoard(BoardVO boardVO) throws Exception {
@@ -33,5 +34,9 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void deleteBoard(int bid) throws Exception {
 		 boardDAO.deleteBoard(bid);
+	}
+	@Override
+	public int getBoardListCnt() throws Exception {
+		return boardDAO.getBoardListCnt();
 	}
 }
