@@ -18,8 +18,7 @@ import com.spring.web.common.Search;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-		"classpath:spring/root-context.xml",
-		"classpath:spring/dataSource-context.xml"
+		"classpath:spring/*-context.xml"
 		})
 public class BoardDAOTest {
 	private static final Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);

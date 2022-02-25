@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.spring.web.BoardDAOTest" time="0" errors="0" skipped="6">
+<testsuite tests="6" failures="0" name="com.spring.web.BoardDAOTest" time="0.006" errors="0" skipped="6">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib"/>
@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf9635244896499880817.tmp"/>
+    <property name="classworlds.conf" value="/Users/parkjungyeong/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf11641276573357489284.tmp"/>
     <property name="jansi.force" value="true"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/parkjungyeong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
@@ -65,25 +65,25 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.spring.web.BoardDAOTest" name="testGetBoardContent" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="testGetBoardContent" time="0.001">
     <skipped/>
     <system-out>INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@51a9ad5e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5f20155b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@72ade7e3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@239105a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3fce8fd9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@609bcfb6]
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@710f4dc7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ff4931d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@65e98b1c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@61322f9d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ad82709, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@510f3d34]
 </system-out>
   </testcase>
-  <testcase classname="com.spring.web.BoardDAOTest" name="testUpdateBoard" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="testUpdateBoard" time="0.001">
     <skipped/>
   </testcase>
-  <testcase classname="com.spring.web.BoardDAOTest" name="testInsertBoard" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="testInsertBoard" time="0.001">
     <skipped/>
   </testcase>
-  <testcase classname="com.spring.web.BoardDAOTest" name="testGetBoardList" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="testGetBoardList" time="0.001">
     <skipped/>
   </testcase>
-  <testcase classname="com.spring.web.BoardDAOTest" name="tesDeleteBoard" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="tesDeleteBoard" time="0.001">
     <skipped/>
   </testcase>
-  <testcase classname="com.spring.web.BoardDAOTest" name="testUpdateViewCnt" time="0">
+  <testcase classname="com.spring.web.BoardDAOTest" name="testUpdateViewCnt" time="0.001">
     <skipped/>
   </testcase>
 </testsuite>
