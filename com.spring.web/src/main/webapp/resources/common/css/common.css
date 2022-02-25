@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 0px;
   padding-bottom: 30px;
 }
 .board_title {
@@ -31,4 +31,7 @@ body {
 .pagination {
   display: flex;
   justify-content: center;
+}
+.container{
+	padding-top: 30px;
 }
