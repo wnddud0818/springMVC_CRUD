@@ -22,7 +22,7 @@
         <a class="nav-link" href="/board/getBoardList">게시판<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">회원관리</a>
+        <a class="nav-link" href="/user/getUserList">유저관리</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">개발중</a>
