@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.RequestMethod; 
 import org.springframework.web.bind.annotation.RequestParam; 
-import org.springframework.web.servlet.mvc.support.RedirectAttributes; 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.spring.web.common.Pagination;
+import com.spring.web.common.Search;
 import com.spring.web.user.model.UserVO; 
 import com.spring.web.user.service.UserService; 
 @Controller @RequestMapping(value = "/user") public class UserController { 
@@ -19,9 +21,25 @@ import com.spring.web.user.service.UserService;
 	
 	@RequestMapping(value = "/getUserList", method = RequestMethod.GET) 
 	
-	public String getUserList(Model model) throws Exception{ 
+	public String getUserList(Model model
+			, @RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range
+			, @RequestParam(required = false, defaultValue = "title") String searchType
+			, @RequestParam(required = false) String keyword
+			) throws Exception{ 
+		Search search = new Search();
+		search.setSearchType(searchType);
+		search.setKeyword(keyword);
+		//전체 회원 수
+		int listCnt = userService.getUserListCnt(search);
+		search.pageInfo(page, range, listCnt);
+		//Pagination 객체생성
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		
+		model.addAttribute("pagination", search);
 		logger.info("getUserList()...."); 
-		model.addAttribute("userList", userService.getUserList()); 
+		model.addAttribute("userList", userService.getUserList(search)); 
 		return "user/userList"; 
 		}
 	@RequestMapping(value = "/insertUser", method = RequestMethod.POST) 

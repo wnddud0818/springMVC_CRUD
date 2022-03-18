@@ -8,7 +8,7 @@
 	});
 	$(document).on('click', '#btnSearch', function(e){ 
 		e.preventDefault(); 
-		var url = "${getBoardListURL}"; 
+		var url = "${getUserListURL}"; 
 		url = url + "?searchType=" + $('#searchType').val(); 
 		url = url + "&keyword=" + $('#keyword').val();
 		console.log(url); location.href = url; 

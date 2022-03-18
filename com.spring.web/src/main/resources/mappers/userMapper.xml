@@ -17,6 +17,25 @@
 		WHERE
              UID = #{uid}
 	</select>
+	<select id="getUserListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			TBL_USER
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="keyword != null and keyword != '' ">
+				<if test="searchType=='title'">
+					AND TITLE like CONCAT('%', #{keyword}, '%')
+				</if>
+				<if test="searchType=='content'">
+					AND CONTENT like CONCAT('%', #{keyword}, '%')
+				</if>
+				<if test="searchType=='reg_id'">
+					AND reg_id like CONCAT('%', #{keyword}, '%')
+				</if>
+     		</if>
+			</trim>
+	</select>
 	<select id="getUserList"
 		resultType="com.spring.web.user.model.UserVO"> 
 		SELECT 
@@ -30,6 +49,18 @@
 		     , REG_DT
 		FROM
 			TBL_USER
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchType=='title' and keyword != null and keyword != '' ">
+				AND TITLE like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='content' and keyword != null and keyword != '' ">
+				AND CONTENT like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='reg_id' and keyword != null and keyword != '' ">
+				AND reg_id like CONCAT('%', #{keyword}, '%')
+			</if>	
+		</trim>
+		LIMIT #{startList}, #{listSize}
 		</select>
 	<insert id="insertUser"
 		parameterType="com.spring.web.user.model.UserVO"> 
@@ -59,4 +90,5 @@
 	<delete id="deleteUser" parameterType="int"> 
 		DELETE FROM TBL_USER
 		WHERE UID = #{uid} </delete>
+		
 </mapper>
