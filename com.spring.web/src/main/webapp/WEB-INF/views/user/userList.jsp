@@ -56,7 +56,7 @@
 						<col style="width:5%;" /> 
 						<col style="width:15%;" /> 
 					</colgroup>
-					<thead> 
+					<thead style="text-align:center"> 
 						<tr> 
 						    <th>회원번호</th> 
 							<th>아이디</th> 
