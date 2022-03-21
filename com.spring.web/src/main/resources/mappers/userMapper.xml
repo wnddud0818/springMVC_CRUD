@@ -87,8 +87,7 @@
 			, TEL = #{tel}
 		WHERE 
 			UID = #{uid} </update>
-	<delete id="deleteUser" parameterType="int"> 
+	<delete id="deleteUser" parameterType="com.spring.web.user.model.UserVO"> 
 		DELETE FROM TBL_USER
 		WHERE UID = #{uid} </delete>
-		
 </mapper>

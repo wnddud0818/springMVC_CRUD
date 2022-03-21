@@ -69,5 +69,9 @@ import com.spring.web.user.service.UserService;
 		model.addAttribute("userVO", new UserVO());
 		return "user/signupForm";
 	}
-
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+	public String deleteUser(RedirectAttributes rttr, @RequestParam("uid") String uid) throws Exception {
+		userService.deleteUser(uid);
+		return "redirect:/user/getUserList";
+	}
 	}
