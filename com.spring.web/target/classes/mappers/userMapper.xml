@@ -24,14 +24,14 @@
 			TBL_USER
 			<trim prefix="WHERE" prefixOverrides="AND|OR">
 			<if test="keyword != null and keyword != '' ">
-				<if test="searchType=='title'">
-					AND TITLE like CONCAT('%', #{keyword}, '%')
+				<if test="searchType=='UID'">
+					AND UID like CONCAT('%', #{keyword}, '%')
 				</if>
-				<if test="searchType=='content'">
-					AND CONTENT like CONCAT('%', #{keyword}, '%')
+				<if test="searchType=='NAME'">
+					AND NAME like CONCAT('%', #{keyword}, '%')
 				</if>
-				<if test="searchType=='reg_id'">
-					AND reg_id like CONCAT('%', #{keyword}, '%')
+				<if test="searchType=='ID'">
+					AND ID like CONCAT('%', #{keyword}, '%')
 				</if>
      		</if>
 			</trim>
@@ -50,16 +50,17 @@
 		FROM
 			TBL_USER
 			<trim prefix="WHERE" prefixOverrides="AND|OR">
-			<if test="searchType=='title' and keyword != null and keyword != '' ">
-				AND TITLE like CONCAT('%', #{keyword}, '%')
+			<if test="searchType=='UID' and keyword != null and keyword != '' ">
+				AND UID like CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test="searchType=='content' and keyword != null and keyword != '' ">
-				AND CONTENT like CONCAT('%', #{keyword}, '%')
+			<if test="searchType=='NAME' and keyword != null and keyword != '' ">
+				AND NAME like CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test="searchType=='reg_id' and keyword != null and keyword != '' ">
-				AND reg_id like CONCAT('%', #{keyword}, '%')
+			<if test="searchType=='ID' and keyword != null and keyword != '' ">
+				AND ID like CONCAT('%', #{keyword}, '%')
 			</if>	
 		</trim>
+		ORDER BY UID DESC
 		LIMIT #{startList}, #{listSize}
 		</select>
 	<insert id="insertUser"

@@ -112,9 +112,9 @@
 		<div class="form-group row justify-content-center">
 		<div style="padding-right:10px">
 		<select class="form-control form-control-sm" name="searchType" id="searchType"> 
-			<option value="title" <c:if test="${pagination.searchType eq 'title'}">selected</c:if> >제목</option>
-			<option value="content" <c:if test="${pagination.searchType eq 'content'}">selected</c:if>>본문</option>
-			<option value="reg_id" <c:if test="${pagination.searchType eq 'reg_id'}">selected</c:if>>작성자</option>
+			<option value="UID" <c:if test="${pagination.searchType eq 'UID'}">selected</c:if>>회원번호</option>
+			<option value="NAME" <c:if test="${pagination.searchType eq 'NAME'}">selected</c:if>>이름</option>
+			<option value="ID" <c:if test="${pagination.searchType eq 'ID'}">selected</c:if>>아이디</option>
 		</select>
 		</div> 
 		<div style="padding-right:10px">
