@@ -85,7 +85,6 @@
 			, EMAIL = #{email} 
 			, GRADE = #{grade}
 			, TEL = #{tel}
-			, REG_DT = #{date}
 		WHERE 
 			UID = #{uid} </update>
 	<delete id="deleteUser" parameterType="int"> 

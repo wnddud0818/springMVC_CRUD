@@ -48,9 +48,26 @@ import com.spring.web.user.service.UserService;
 		return "user/userContent";
 	}
 	@RequestMapping(value = "/insertUser", method = RequestMethod.POST) 
-	
-	public String insertUser(@ModelAttribute("userVO") UserVO userVO , RedirectAttributes rttr) throws Exception {
+	public String insertUser(@ModelAttribute("userVO") UserVO userVO 
+			, @RequestParam("mode") String mode
+			,RedirectAttributes rttr) throws Exception {
+		
+		if (mode.equals("edit")) {
+			userService.updateUser(userVO);
+		} else {
+			userService.insertUser(userVO);
+		}
 		userService.insertUser(userVO); return "redirect:/user/getUserList"; 
 		} 
 	@RequestMapping(value = "/signupForm", method = RequestMethod.GET) public String signupForm(Model model) throws Exception { model.addAttribute("userVO", new UserVO()); return "user/signupForm"; }
+	
+	@RequestMapping(value = "/editForm", method = RequestMethod.GET)
+	public String editForm(@RequestParam("uid") String uid
+			, @RequestParam("mode") String mode, Model model) throws Exception {
+		model.addAttribute("userContent", userService.getUserContent(uid));
+		model.addAttribute("mode", mode);
+		model.addAttribute("userVO", new UserVO());
+		return "user/signupForm";
+	}
+
 	}

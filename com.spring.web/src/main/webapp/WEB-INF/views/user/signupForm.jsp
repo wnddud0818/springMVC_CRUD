@@ -3,6 +3,21 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 	<script> 
+	$(document).ready(function(){
+		var mode = '<c:out value="${mode}"/>';
+		if ( mode == 'edit'){
+			//입력 폼 셋팅
+			$("#id").prop('readonly', true);
+			$("input:hidden[name='uid']").val(<c:out value="${userContent.uid}"/>);
+			$("input:hidden[name='mode']").val('<c:out value="${mode}"/>');
+			$("#id").val('<c:out value="${userContent.id}"/>');
+			$("#name").val('<c:out value="${userContent.name}"/>');
+			$("#pwd").val('<c:out value="${userContent.pwd}"/>');
+			$("#email").val('<c:out value="${userContent.email}"/>');
+			$("#grade").val('<c:out value="${userContent.grade}"/>');
+			$("#tel").val('<c:out value="${userContent.tel}"/>');
+		}
+	});
 	$(document).on('click', '#btnSignup', function(e){
 		e.preventDefault(); $("#form").submit();
 		}); 
@@ -25,11 +40,13 @@
 		<div class="card-header">Register</div> 
 		<div class="card-body"> 
 		<form:form name="form" id="form" class="form-signup" role="form" modelAttribute="userVO" method="post" action="${pageContext.request.contextPath}/user/insertUser">
+		<form:hidden path="uid" />
+		<input type="hidden" name="mode" />
 		<div class="form-group row">
-			<label for="id" class="col-md-3 col-form-label text-md-right">아이디</label>
-			<div class="col-md-5"> 
-				<form:input path="id" id="id" class="form-control" placeholder="아이디을 입력해 주세요" /> 
-			</div> 
+		<label for="id" class="col-md-3 col-form-label text-md-right">아이디</label>
+		<div class="col-md-5"> 
+		<form:input path="id" id="id" class="form-control" placeholder="아이디을 입력해 주세요" /> 
+		</div> 
 		</div>
 		<div class="form-group row"> 
 		<label for="name" class="col-md-3 col-form-label text-md-right">이름</label> 

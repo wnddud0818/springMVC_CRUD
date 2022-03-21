@@ -3,6 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 	<script> 
+	//삭제 버튼 클릭 이벤트
+	$(document).on('click', '#btnDelete', function(){
+    var url = "${pageContext.request.contextPath}/user/deleteUser";
+    url = url + "?uid=" + ${userContent.uid};
+		location.href = url;
+	});
 	$(document).on('click', '#btnList', function(){
 		location.href = "${pageContext.request.contextPath}/User/getUserList";
 	});
@@ -20,6 +26,12 @@
 		$('#tel').val(''); 
 		location.href="${pageContext.request.contextPath}/user/getUserList"; 
 		});
+	$(document).on('click', '#btnUpdate', function(){
+		var url = "${pageContext.request.contextPath}/user/editForm";
+		url = url + "?uid="+${userContent.uid};
+		url = url + "&mode=edit";
+		location.href = url;
+	});
 	
 	</script>
 	<article> 
