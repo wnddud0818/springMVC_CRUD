@@ -3,8 +3,7 @@
     PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.spring.web.board.boardMapper">
-
+    <mapper namespace="com.spring.web.board.boardMapper">
 	<select id="getBoardListCnt" resultType="int">
 		SELECT
 			count(*) as listCnt
