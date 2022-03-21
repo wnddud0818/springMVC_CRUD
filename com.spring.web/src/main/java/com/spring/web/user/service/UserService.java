@@ -10,6 +10,8 @@ public interface UserService {
 	
 	public List<UserVO> getUserList(Search search) throws Exception; 
 	
+	public UserVO getUserContent(String uid) throws Exception;
+	
 	public UserVO getUserInfo(String uid) throws Exception; 
 	
 	public void insertUser(UserVO userVO) throws Exception; 

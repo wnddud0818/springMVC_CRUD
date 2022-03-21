@@ -31,6 +31,9 @@ import com.spring.web.user.model.UserVO;
 	@Override public int getUserListCnt(Search search) throws Exception {
 		return userDAO.getUserListCnt(search);
 	}
+	public UserVO getUserContent(String uid) throws Exception{
+		return userDAO.getUserInfo(uid);
+	}
 	}
 	
 

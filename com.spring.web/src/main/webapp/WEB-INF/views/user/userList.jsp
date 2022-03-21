@@ -2,6 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 <script> 
+//상세조회
+	function fn_userView(uid){
+	var url = "${pageContext.request.contextPath}/user/getUserContent";
+	url = url + "?uid="+uid;
+	location.href = url;
+	}
+	
 	$(document).on('click', '#btnuseradd', function(e){
 	e.preventDefault();
 	location.href="${pageContext.request.contextPath}/user/signupForm";
@@ -75,7 +82,11 @@
 					<c:when test="${!empty userList}"> 
 					<c:forEach var="list" items="${userList}"> 
 					<tr align="center" > 
-					    <td><c:out value="${list.uid}"/></td> 
+					    <td>
+					    <a href="#" onClick="fn_userView(<c:out value="${list.uid}"/>)">
+					    <c:out value="${list.uid}"/>
+					    </a>
+					    </td> 
 						<td><c:out value="${list.id}"/></td> 
 						<td><c:out value="${list.name}"/></td> 
 						<td><c:out value="${list.email}"/></td> 

@@ -42,6 +42,11 @@ import com.spring.web.user.service.UserService;
 		model.addAttribute("userList", userService.getUserList(search)); 
 		return "user/userList"; 
 		}
+	@RequestMapping(value = "/getUserContent", method = RequestMethod.GET)
+	public String getUserContent(Model model, @RequestParam("uid") String uid) throws Exception {
+		model.addAttribute("userContent", userService.getUserContent(uid));
+		return "user/userContent";
+	}
 	@RequestMapping(value = "/insertUser", method = RequestMethod.POST) 
 	
 	public String insertUser(@ModelAttribute("userVO") UserVO userVO , RedirectAttributes rttr) throws Exception {
