@@ -51,13 +51,12 @@ import com.spring.web.user.service.UserService;
 	public String insertUser(@ModelAttribute("userVO") UserVO userVO 
 			, @RequestParam("mode") String mode
 			,RedirectAttributes rttr) throws Exception {
-		
 		if (mode.equals("edit")) {
 			userService.updateUser(userVO);
 		} else {
 			userService.insertUser(userVO);
 		}
-		userService.insertUser(userVO); return "redirect:/user/getUserList"; 
+		return "redirect:/user/getUserList"; 
 		} 
 	@RequestMapping(value = "/signupForm", method = RequestMethod.GET) public String signupForm(Model model) throws Exception { model.addAttribute("userVO", new UserVO()); return "user/signupForm"; }
 	
