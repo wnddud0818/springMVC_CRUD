@@ -5,89 +5,80 @@
 	<script> 
 	$(document).ready(function(){
 		var mode = '<c:out value="${mode}"/>';
-		if ( mode == 'edit'){
-			//입력 폼 셋팅
-			$("#id").prop('readonly', true);
-			$("input:hidden[name='uid']").val(<c:out value="${userContent.uid}"/>);
-			$("input:hidden[name='mode']").val('<c:out value="${mode}"/>');
-			$("#id").val('<c:out value="${userContent.id}"/>');
-			$("#name").val('<c:out value="${userContent.name}"/>');
-			$("#pwd").val('<c:out value="${userContent.pwd}"/>');
-			$("#email").val('<c:out value="${userContent.email}"/>');
-			$("#grade").val('<c:out value="${userContent.grade}"/>');
-			$("#tel").val('<c:out value="${userContent.tel}"/>');
-		}
+		if ( mode == 'edit'){	//입력 폼 셋팅
+				$("#id").prop('readonly', true);
+				$("input:hidden[name='uid']").val(<c:out value="${userContent.uid}"/>);
+				$("input:hidden[name='mode']").val('<c:out value="${mode}"/>');
+				$("#id").val('<c:out value="${userContent.id}"/>');
+				$("#name").val('<c:out value="${userContent.name}"/>');
+				$("#pwd").val('<c:out value="${userContent.pwd}"/>');
+				$("#email").val('<c:out value="${userContent.email}"/>');
+				$("#grade").val('<c:out value="${userContent.grade}"/>');
+				$("#tel").val('<c:out value="${userContent.tel}"/>');
+				}
+			});
+			$(document).on('click', '#btnSignup', function(e){
+		   	 if(document.getElementById('id').value==""){ //id값이 없을 경우
+			 	 alert("아이디를 입력하세요");         //메세지 경고창을 띄운 후
+		    	 document.getElementById('id').focus();     // id 텍스트박스에 커서를 위치
+			     exit;}
+		   	 else if(document.getElementById('name').value==""){
+				 alert("이름을 입력하세요");
+				 document.getElementById('name').focus();
+				 exit;
+				 }else if(document.getElementById('pwd').value==""){
+				 alert("비밀번호를 입력하세요");
+				 document.getElementById('pwd').focus();
+				 exit;
+			 }else if(document.getElementById('re_pwd').value==""){
+				 alert("비밀번호확인을 입력하세요");
+				 document.getElementById('re_pwd').focus(); 
+				 exit;
+			 }else if(document.getElementById('email').value==""){
+				 alert("이메일을 입력하세요");
+				 document.getElementById('email').focus(); 
+				 exit;
+			 }else if(document.getElementById('grade').value==""){
+				 alert("직급을 입력하세요");
+				 document.getElementById('grade').focus(); 
+				 exit;
+			 }else if(document.getElementById('tel').value==""){
+				 alert("전화번호를 입력하세요");
+				 document.getElementById('tel').focus();
+				 exit;
+			 }
+			 if(pwd.value!=re_pwd.value){
+			 //비밀번호와 비밀번호확인의 값이 다를 경우
+			 
+			 alert("입력한 2개의 비밀번호가 일치하지 않습니다.");
+			 document.addjoin.pw.focus();
+			 exit;
+			 }
+			 var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+			 
+			 if(exptext.test(document.getElementById('email').value)==false){
+			 //이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
+			 alert("이메일형식이 올바르지 않습니다.");
+			 document.getElementById('email').focus();
+			 exit;
+			 }
+			 var regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+			 if(regPhone.test(document.getElementById('tel').value)==false){
+			 alert("전화번호형식이 올바르지 않습니다.");
+			 document.getElementById('tel').focus();
+			 exit;
+			 }
+			 var regNumber = /[^0-9]/g;
+			 if(regNumber.test(document.getElementById('tel').value)==true){
+				 var tel = document.getElementById('tel').value;
+				 phoneData = tel.replace(regNumber, "");
+				 $('#tel').val(phoneData);
+			 }
+			 e.preventDefault(); $("#form").submit();
 	});
 // 	$(document).on('click', '#btnSignup', function(e){
-// 			id=$('#id')
-// 			name=$('#name')
-// 			pwd=$('#pwd')
-// 			re_pwd=$('#re_pwd')
-// 			email=$('#email')
-// 			grade=$('#grade')
-// 			tel=$('#tel') 
-// 			 if($(id==""){ //id값이 없을 경우
-// 			 alert("아이디를 입력하세요");         //메세지 경고창을 띄운 후
-// 			 $('#id').focus();     // id 텍스트박스에 커서를 위치
-// 			 exit;
-			 
-// 			 }else if(pwd.value==""){
-// 			 alert("비밀번호를 입력하세요");
-// 			 $('#pwd').focus();
-// 			 exit;
-			 
-// 			 }else if(document.addjoin.pw2.value==""){
-// 			 alert("비밀번호확인을 입력하세요");
-// 			 document.addjoin.pw2.focus();
-// 			 exit;
-			 
-// 			 }else if(document.addjoin.name.value==""){
-// 			 alert("이름을 입력하세요");
-// 			 document.addjoin.name.focus();
-// 			 exit;
-			 
-// 			 }else if(document.addjoin.nick.value==""){
-// 			 alert("닉네임을 입력하세요");
-// 			 document.addjoin.nick.focus();
-// 			 exit;
-			 
-// 			 }else if(document.addjoin.addr.value==""){
-// 			 alert("주소를 입력하세요");
-// 			 document.addjoin.addr.focus();
-// 			 exit;
-			 
-// 			 }else if(document.addjoin.email.value==""){
-// 			 alert("이메일을 입력하세요");
-// 			 $('#email').focus();
-// 			 exit;
-			 
-// 			 }
-			 
-			 
-// 			 if(pwd.value!=re_pwd.value){
-// 			 //비밀번호와 비밀번호확인의 값이 다를 경우
-			 
-// 			 alert("입력한 2개의 비밀번호가 일치하지 않습니다.");
-// 			 document.addjoin.pw.focus();
-// 			 exit;
-			 
-// 			 }
-			 
-			 
-// 			 var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-			 
-// 			 if(exptext.test(document.addjoin.email.value)==false){
-// 			 //이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
-			 
-// 			 alert("이 메일형식이 올바르지 않습니다.");
-// 			 document.addjoin.email.focus();
-// 			 exit;
-// 			 }
 // 			 e.preventDefault(); $("#form").submit();
-// 	});
-	$(document).on('click', '#btnSignup', function(e){
-			 e.preventDefault(); $("#form").submit();
-		}); 
+// 		}); 
 	$(document).on('click', '#btnCancel', function(e){ 
 		e.preventDefault(); 
 		$('#id').val(''); 
