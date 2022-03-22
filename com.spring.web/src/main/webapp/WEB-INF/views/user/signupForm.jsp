@@ -21,12 +21,12 @@
 	$(document).on('click', '#btnSignup', function(e){
 		e.preventDefault(); $("#form").submit();
 		}); 
-	$(document).on('click', '#btnCancle', function(e){ 
+	$(document).on('click', '#btnCancel', function(e){ 
 		e.preventDefault(); 
 		$('#id').val(''); 
 		$('#name').val('');
-		$('#pwd1').val(''); 
-		$('#pwd2').val('');
+		$('#pwd').val(''); 
+		$('#re_pwd').val('');
 		$('#email').val('');
 		$('#grade').val(''); 
 		$('#tel').val(''); 
@@ -37,7 +37,7 @@
 	<article> 
 		<div class="container col-md-6" role="main"> 
 		<div class="card">
-		<div class="card-header">Register</div> 
+		<div class="card-header">회원정보</div> 
 		<div class="card-body"> 
 		<form:form name="form" id="form" class="form-signup" role="form" modelAttribute="userVO" method="post" action="${pageContext.request.contextPath}/user/insertUser">
 		<form:hidden path="uid" />
