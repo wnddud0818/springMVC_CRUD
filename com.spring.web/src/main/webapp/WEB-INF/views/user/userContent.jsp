@@ -80,7 +80,7 @@
 		</div>
 		</form:form> 
 		</div> 
-		</div> 
+		</div>
 		<div style="margin-top:10px"> 
 		<button type="button" class="btn btn-sm btn-primary" id="btnUpdate">수정</button>
 		<button type="button" class="btn btn-sm btn-primary" id="btnDelete">삭제</button>

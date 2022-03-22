@@ -88,7 +88,7 @@
 		</div> 
 		</div> 
 		<div style="margin-top:10px"> 
-		<button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
+		<button type="button" class="btn btn-sm btn-primary" id="btnSignup">저장</button>
 		<button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button> 
 		</div>
 		</div>
