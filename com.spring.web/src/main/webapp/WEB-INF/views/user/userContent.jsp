@@ -37,45 +37,42 @@
 	<article> 
 		<div class="container col-md-6" role="main"> 
 		<div class="card">
-		<div class="card-header">Register</div> 
+		<div class="card-header">회원정보</div> 
 		<div class="card-body"> 
 		<form:form name="form" id="form" class="form-signup" role="form" modelAttribute="userVO" method="post" action="${pageContext.request.contextPath}/user/getUserContent">
 		<div class="form-group row">
 			<label for="id" class="col-md-3 col-form-label text-md-right">아이디</label>
 			<div class="col-md-5"> 
-			<c:out value="${userContent.id}"/>
+			<input class="form-control" type="text" value="${userContent.id}" aria-label="Disabled input example" disabled readonly>
 			</div> 
 		</div>
 		<div class="form-group row"> 
-		<label for="name" class="col-md-3 col-form-label text-md-right">이름</label> 
-		<div class="col-md-5"> 
-		<c:out value="${userContent.name}"/>
-		</div> 
+			<label for="name" class="col-md-3 col-form-label text-md-right">이름</label> 
+			<div class="col-md-5"> 
+			<input class="form-control" type="text" value="${userContent.name}" aria-label="Disabled input example" disabled readonly>
+			</div> 
 		</div> 
 		<div class="form-group row">
-		<label for="pwd" class="col-md-3 col-form-label text-md-right">비밀번호</label> 
-		<div class="col-md-5"> 
-		<c:out value="${userContent.pwd}"/> 
-		</div> 
+			<label for="pwd" class="col-md-3 col-form-label text-md-right">비밀번호</label> 
+			<div class="col-md-5"> 
+			<input class="form-control" type="text" value="${userContent.pwd}" aria-label="Disabled input example" disabled readonly>
+			</div> 
 		</div>  
 		<div class="form-group row"> <label for="email" class="col-md-3 col-form-label text-md-right">이메일</label> 
-		<div class="input-group col-md-7"> 
-		<div class="input-group-prepend"> 
-		<span class="input-group-text">@</span> 
-		</div> 
-		<c:out value="${userContent.email}"/>
-		</div> 
+			<div class="input-group col-md-7"> 
+			<input class="form-control" type="text" value="${userContent.email}" aria-label="Disabled input example" disabled readonly>
+			</div> 
 		</div> 
 		<div class="form-group row">
 			<label for="id" class="col-md-3 col-form-label text-md-right">직급</label>
 			<div class="col-md-5"> 
-				<c:out value="${userContent.grade}"/>
+			<input class="form-control" type="text" value="${userContent.grade}" aria-label="Disabled input example" disabled readonly>
 			</div> 
 		</div>
 		<div class="form-group row">
 			<label for="id" class="col-md-3 col-form-label text-md-right">전화번호</label>
 			<div class="col-md-5"> 
-				<c:out value="${userContent.tel}"/>
+			<input class="form-control" type="text" value="${userContent.tel}" aria-label="Disabled input example" disabled readonly>
 			</div> 
 		</div>
 		</form:form> 
