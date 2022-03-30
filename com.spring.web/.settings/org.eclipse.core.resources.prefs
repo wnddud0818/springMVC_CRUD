@@ -4,6 +4,7 @@ encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/views/board/boardContent.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/board/boardForm.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/board/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/layout/header.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8

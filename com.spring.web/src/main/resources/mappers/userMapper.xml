@@ -67,11 +67,11 @@
 		parameterType="com.spring.web.user.model.UserVO"> 
 		INSERT INTO TBL_USER (ID, NAME, PWD, EMAIL, GRADE, TEL , REG_DT)
 		VALUES ( 
-		#{id} 
+		#{id}
 		, #{name}
 		, #{pwd}
-		, #{email} 
-		, #{grade} 
+		, #{email}
+		, #{grade}
 		, #{tel}
 		, now() 
 		) 
@@ -80,9 +80,9 @@
 		parameterType="com.spring.web.user.model.UserVO"> 
 		UPDATE TBL_USER SET 
 			 ID = #{id}
-			, NAME = #{name} 
-			, PWD = #{pwd} 
-			, EMAIL = #{email} 
+			, NAME = #{name}
+			, PWD = #{pwd}
+			, EMAIL = #{email}
 			, GRADE = #{grade}
 			, TEL = #{tel}
 		WHERE 
